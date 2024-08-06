@@ -1,0 +1,32 @@
+.container-body {
+    width: 80%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+  .modal-add {
+    position: fixed;
+    padding: 10px;
+    width: 45%;
+    height: 35%;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    border: 2px solid black;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    float:left;
+  }
+
+  .modal-container {
+    margin-right: auto!important;
+    margin-left: auto!important;
+  }
