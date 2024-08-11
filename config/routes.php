@@ -85,6 +85,17 @@ return function (RouteBuilder $routes): void {
         // Thay đổi mật khẩu
         $builder->connect('/PasswordChange', ['controller' => 'UserPage', 'action' => 'passwordChange']);
 
+        // Giỏ hàng
+        $builder->connect('/Cart', ['controller' => 'UserPage', 'action' => 'cart']);
+        // Danh sách lịch sử mua hàng
+        $builder->connect('/PurchaseHistoryList', ['controller' => 'UserPage', 'action' => 'purchaseHistoryList']);
+        // Chi tiết lịch sử mua hàng
+        $builder->connect('/PurchaseHistoryDetail', ['controller' => 'UserPage', 'action' => 'purchaseHistoryDetail']);
+        // Xác nhận cancel order
+        $builder->connect('/ConfirmCancelOrder', ['controller' => 'UserPage', 'action' => 'confirmCancelOrder']);
+        // Hoàn thành cancel order
+        $builder->connect('/CompleteCancelOrder', ['controller' => 'UserPage', 'action' => 'completeCancelOrder']);
+
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */

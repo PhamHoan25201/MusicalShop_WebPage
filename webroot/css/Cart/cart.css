@@ -1,0 +1,49 @@
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 40%;
+    margin: auto;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.icon {
+    font-size: 24px;
+}
+
+.label {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.number {
+    position: absolute;
+    bottom: -35px;
+    background-color: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.line {
+    position: absolute;
+    top: 130%;
+    left: -5%;
+    right: -5%;
+    height: 2px;
+    background-color: black;
+    z-index: -1;
+}

@@ -16,7 +16,7 @@ class UserPageController extends AppController
     {
         parent::initialize();
 
-        $this->Authentication->addUnauthenticatedActions(['index', 'myPage', 'customerInfo', 'customerChange', 'passwordChange' ]);
+        $this->Authentication->addUnauthenticatedActions(['index', 'myPage', 'customerInfo', 'customerChange', 'passwordChange', 'cart', 'purchaseHistoryList', 'purchaseHistoryDetail', 'confirmCancelOrder', 'completeCancelOrder' ]);
 
     }
     
@@ -66,6 +66,56 @@ class UserPageController extends AppController
      * @return \Cake\Http\Response|null|void Renders view
      */
     public function passwordChange()
+    {
+        
+    }
+
+    /**
+     * cart method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function cart()
+    {
+        
+    }
+
+    /**
+     * purchaseHistoryList method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function purchaseHistoryList()
+    {
+        
+    }
+
+    /**
+     * PurchaseHistoryDetail method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function purchaseHistoryDetail()
+    {
+        
+    }
+
+    /**
+     * ConfirmCancelOrder method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function confirmCancelOrder()
+    {
+        
+    }
+
+    /**
+     * CompleteCancelOrder method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function completeCancelOrder()
     {
         
     }
