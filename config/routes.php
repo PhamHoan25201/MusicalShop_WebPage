@@ -73,6 +73,7 @@ return function (RouteBuilder $routes): void {
         $builder->connect('/Brands', ['controller' => 'Brands', 'action' => 'index']);
         $builder->connect('/AdminUsers', ['controller' => 'AdminUsers', 'action' => 'index']);
 
+        // ID HoanPV ADD Beign
         // MyPage
         $builder->connect('/MyPage', ['controller' => 'UserPage', 'action' => 'myPage']);
 
@@ -84,6 +85,16 @@ return function (RouteBuilder $routes): void {
 
         // Thay đổi mật khẩu
         $builder->connect('/PasswordChange', ['controller' => 'UserPage', 'action' => 'passwordChange']);
+
+        // Login
+        $builder->connect('/Login', ['controller' => 'UserPage', 'action' => 'login']);
+
+        // Register
+        $builder->connect('/Register', ['controller' => 'UserPage', 'action' => 'register']);
+
+        // Forgot Password
+        $builder->connect('/ForgotPassword', ['controller' => 'UserPage', 'action' => 'forgotPassword']);
+        // ID HoanPV ADD End
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.

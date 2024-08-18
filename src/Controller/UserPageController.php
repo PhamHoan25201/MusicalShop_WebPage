@@ -1,4 +1,20 @@
 <?php
+//----------------------------------------------------------------------------
+//
+//  Project name : Musical Shop (WebPage)
+//  Class Name   : UserPageController
+//  Overview     : Controller cho User
+//  Programmer   : HoanPV@SSV
+//  Created Date : 2024/08/18
+//  Version      : 0.1
+//
+//----------< History >--------------------------------------------------------
+//  ID           : 
+//  Programmer   :
+//  Updated Date :
+//  Comment      :
+//  Version      :  
+//-----------------------------------------------------------------------------
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -66,6 +82,36 @@ class UserPageController extends AppController
      * @return \Cake\Http\Response|null|void Renders view
      */
     public function passwordChange()
+    {
+        
+    }
+
+    /**
+     * login method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function login()
+    {
+        
+    }
+
+    /**
+     * register method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function register()
+    {
+        
+    }
+  
+    /**
+     * forgotPassword method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function forgotPassword()
     {
         
     }

@@ -1,4 +1,20 @@
 <?php
+//----------------------------------------------------------------------------
+//
+//  Project name : Musical Shop (WebPage)
+//  Class Name   :
+//  Overview     : Giao diện thay đổi mật khẩu
+//  Programmer   : HoanPV@SSV
+//  Created Date : 2024/08/18
+//  Version      : 0.1
+//
+//----------< History >--------------------------------------------------------
+//  ID           : 
+//  Programmer   :
+//  Updated Date :
+//  Comment      :
+//  Version      :  
+//-----------------------------------------------------------------------------
     $this->disableAutoLayout();
 ?>
 <!DOCTYPE html>
@@ -6,7 +22,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MultiShop - Online Shop Website Template</title>
+    <title>Musical Shop (WebPage)</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">

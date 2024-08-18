@@ -1,3 +1,19 @@
+/* //----------------------------------------------------------------------------
+//
+//  Project name : Musical Shop (WebPage)
+//  Class Name   : 
+//  Overview     : File Common
+//  Programmer   : HoanPV@SSV
+//  Created Date : 2024/08/18
+//  Version      : 0.1
+//
+//----------< History >--------------------------------------------------------
+//  ID           : 
+//  Programmer   :
+//  Updated Date :
+//  Comment      :
+//  Version      :  
+----------------------------------------------------------------------------- */
 (function ($) {
     "use strict";
     

@@ -3,10 +3,10 @@
 //
 //  Project name : Musical Shop (WebPage)
 //  Class Name   :
-//  Overview     : Giao diện page thay đổi thông tin khách hàng
+//  Overview     : Giao diện đăng ký tài khoản
 //  Programmer   : HoanPV@SSV
 //  Created Date : 2024/08/18
-//  Version      :  0.1
+//  Version      : 0.1
 //
 //----------< History >--------------------------------------------------------
 //  ID           : 
@@ -15,7 +15,6 @@
 //  Comment      :
 //  Version      :  
 //-----------------------------------------------------------------------------
-
     $this->disableAutoLayout();
 ?>
 <!DOCTYPE html>
@@ -98,6 +97,19 @@
             color: red; /* Màu đỏ cho dấu * */
             font-weight: bold; /* Chữ đậm cho dấu * */
              font-size: 1.2em; /* Kích thước chữ lớn hơn một chút */
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 72%;
+            right: 31px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+        }
+
+        .toggle-password:hover {
+            color: #000;
         }
       </style>
 </head>
@@ -265,31 +277,46 @@
                             </div>                            
                         </div>
                         <div class="col-md-8 form-group">
-                            <label>Họ và tên<span class="text-danger required-indicator">*</span>:</label>
-                            <input class="form-control" type="text" placeholder="Phạm Văn Hoàn" required>
+                            <label>Email<span class="text-danger required-indicator">*</span></label>
+                            <input class="form-control" type="email" placeholder="Nhập Email" required>
                         </div>
                         <div class="col-md-8 form-group">
-                            <label>Giới tính<span class="text-danger required-indicator">*</span>:</label>
+                            <label>Họ và tên<span class="text-danger required-indicator">*</span></label>
+                            <input class="form-control" type="text" placeholder="Nhập họ và tên" required>
+                        </div>
+                        <div class="col-md-8 form-group">
+                            <label>Ngày sinh<span class="text-danger required-indicator">*</span></label>
+                            <input class="form-control" type="date" value="" required>
+                        </div>
+                        <div class="col-md-8 form-group">
+                            <label>Giới tính<span class="text-danger required-indicator">*</span></label>
                             <select class="custom-select" required>
-                                <option selected>Nam</option>
+                            <option selected>Chọn giới tính</option>
+                                <option >Nam</option>
                                 <option>Nữ</option>
                                 <option>Khác</option>
                             </select>
                         </div>
                         <div class="col-md-8 form-group">
-                            <label>Số điện thoại<span class="text-danger required-indicator">*</span>:</label>
-                            <input class="form-control" type="tel" inputmode="numeric" placeholder="0377788187" pattern="[0-9]{10}" required>
+                            <label>Địa chỉ<span class="text-danger required-indicator">*</span></label>
+                            <input class="form-control" type="text" placeholder="Nhập địa chỉ" required>
                         </div>
                         <div class="col-md-8 form-group">
-                            <label>Ngày sinh<span class="text-danger required-indicator">*</span>:</label>
-                            <input class="form-control" type="date" value="2001-05-02" required>
+                            <label>Số điện thoại<span class="text-danger required-indicator">*</span></label>
+                            <input class="form-control" type="tel" inputmode="numeric" placeholder="Nhập số điện thoại" pattern="[0-9]{10}" required>
                         </div>
                         <div class="col-md-8 form-group">
-                            <label>Địa chỉ<span class="text-danger required-indicator">*</span>:</label>
-                            <input class="form-control" type="text" placeholder="28 Nguyễn Tri Phương" required>
+                            <label>Mật khẩu<span class="text-danger required-indicator">*</span></label>
+                            <input id="passwordNew" class="form-control" type="password" placeholder="Nhập mật khẩu" required>
+                            <i class="toggle-password fas fa-eye" id="togglePasswordNew"></i>
+                        </div>
+                        <div class="col-md-8 form-group">
+                            <label>Nhập lại mật khẩu<span class="text-danger required-indicator">*</span></label>
+                            <input id="passwordReNew" class="form-control" type="password" placeholder="Nhập mật khẩu xác nhận" required>
+                            <i class="toggle-password fas fa-eye" id="togglePasswordReNew"></i>
                         </div>
                         <div class="col-md-5 form-group">
-                            <button class="btn btn-block btn-primary font-weight-bold py-3">Cập nhật</button>
+                            <button class="btn btn-block btn-primary font-weight-bold py-3">Đăng ký</button>
                         </div>
                     </div>
                 </div>
@@ -387,6 +414,44 @@
 
     <!-- Template Javascript -->
     <script src="webroot/js/Common/main.js"></script>
+    <script>
+        const togglePasswordPr = document.getElementById('togglePasswordPr');
+        const togglePasswordNew = document.getElementById('togglePasswordNew');
+        const togglePasswordReNew = document.getElementById('togglePasswordReNew');
+        const passwordPr = document.getElementById('passwordPr');
+        const passwordNew = document.getElementById('passwordNew');
+        const passwordReNew = document.getElementById('passwordReNew');
+
+        togglePasswordPr.addEventListener('click', function () {
+            // Toggle the type attribute
+            const type = passwordPr.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordPr.setAttribute('type', type);
+
+            // Toggle the eye icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        togglePasswordNew.addEventListener('click', function () {
+            // Toggle the type attribute
+            const type = passwordNew.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordNew.setAttribute('type', type);
+
+            // Toggle the eye icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        togglePasswordReNew.addEventListener('click', function () {
+            // Toggle the type attribute
+            const type = passwordReNew.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordReNew.setAttribute('type', type);
+
+            // Toggle the eye icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
 </body>
 
 </html>
