@@ -1,4 +1,21 @@
 <?php
+//----------------------------------------------------------------------------
+//
+//  Project name : Musical Shop (WebPage)
+//  Class Name   :
+//  Overview     : Controller sản phẩm
+//  Programmer   : TaiTD@SSV
+//  Created Date : 2024/09/08
+//  Version      :  0.0.0.1
+//
+//----------< History >--------------------------------------------------------
+//  ID           : 
+//  Programmer   :
+//  Updated Date :
+//  Comment      :
+//  Version      :  
+//-----------------------------------------------------------------------------
+
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -126,23 +143,78 @@ class ProductsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    /**
+     * Hiển thị toàn bộ danh sách sản phẩm
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
     public function all()
     {
         $this->viewBuilder()->setLayout('product');
+
+        //Sẽ sử dụng để get thông tin sản phẩm động khi có DB
+        
+        // $products = $this->Products->find('all')
+        //                            ->where(['Products.delete_flg' => 0]);
+
+        // $this->set(compact('products'));
     }
 
+    /**
+     * Hiển thị toàn bộ danh sách sản phẩm theo kết quả tìm kiếm
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
     public function search()
     {
         $this->viewBuilder()->setLayout('product');
+
+        //Sẽ sử dụng để get thông tin sản phẩm động khi có DB
+
+        // $search = $this->request->getQuery('search');
+
+        // $products = $this->Products->find('search', ['search' => $search])
+        //                            ->where(['Products.delete_flg' => 0]);
+
+        // $this->set(compact('products'));
     }
 
+    /**
+     * Hiển thị chi tiết sản phẩm theo product id
+     *
+     * @param string|null $id Product id.
+     * @return \Cake\Http\Response|null|void Renders view
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException Khi không tìm được sản phẩm.
+     */
     public function detail($id = null)
     {
         $this->viewBuilder()->setLayout('product');
+
+        //Sẽ sử dụng để get thông tin sản phẩm động khi có DB
+
+        // $product = $this->Products->get($id, [
+        //      'contain' => ['Categories', 'Brands', 'CartDetails', 'ImageProducts', 'OrderDetails', 'Properties'],
+        // ]);
+
+        // $this->set(compact('product'));
     }
 
+    /**
+     * Hiển thị danh sách sản phẩm theo category
+     *
+     * @param string|null $id Category id.
+     * @return \Cake\Http\Response|null|void Renders view
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException Khi không tìm được category.
+     */
     public function category($id = null)
     {
         $this->viewBuilder()->setLayout('product');
+
+        //Sẽ sử dụng để get thông tin sản phẩm động khi có DB
+        
+        // $products = $this->Products->find('all')
+        //                            ->where(['Products.category_id' => $id]);
+
+        // $this->set(compact('products'));
     }
 }

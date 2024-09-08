@@ -1,4 +1,21 @@
 <?php
+//----------------------------------------------------------------------------
+//
+//  Project name : Musical Shop (WebPage)
+//  Class Name   :
+//  Overview     : Template màn hình hiển thị danh sách toàn bộ sản phẩm
+//  Programmer   : TaiTD@SSV
+//  Created Date : 2024/09/08
+//  Version      :  0.0.0.1
+//
+//----------< History >--------------------------------------------------------
+//  ID           : 
+//  Programmer   :
+//  Updated Date :
+//  Comment      :
+//  Version      :  
+//-----------------------------------------------------------------------------
+
 /**
  * @var \App\View\AppView $this
  * @var iterable<\App\Model\Entity\Product> $products
