@@ -89,11 +89,11 @@ return function (RouteBuilder $routes): void {
         // Danh sách toàn bộ sản phẩm
         $builder->connect('/Products/All', ['controller' => 'Products', 'action' => 'all']);
         // Danh sách sản phẩm theo category
-        $builder->connect('/Products/Category', ['controller' => 'Products', 'action' => 'category']);
+        $builder->connect('/Products/Category/:id', ['controller' => 'Products', 'action' => 'category']);
         // Tìm kiếm sản phẩm
         $builder->connect('/Products/Search', ['controller' => 'Products', 'action' => 'search']);
         // Chi tiết sản phẩm
-        $builder->connect('/Products/Detail', ['controller' => 'Products', 'action' => 'detail']);     
+        $builder->connect('/Products/Detail/:id', ['controller' => 'Products', 'action' => 'detail']);     
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.

@@ -151,11 +151,11 @@ class ProductsController extends AppController
     public function all()
     {
         $this->viewBuilder()->setLayout('product');
-
-        //Sẽ sử dụng để get thông tin sản phẩm động khi có DB
         
-        // $products = $this->Products->find('all')
-        //                            ->where(['Products.delete_flg' => 0]);
+        //Sẽ dùng để get thông tin sản phẩm khi có DB
+        // $products = $this->Products->find()
+        //                            ->where(['Products.delete_flg' => 0])
+        //                            ->all();
 
         // $this->set(compact('products'));
     }
@@ -169,12 +169,12 @@ class ProductsController extends AppController
     {
         $this->viewBuilder()->setLayout('product');
 
-        //Sẽ sử dụng để get thông tin sản phẩm động khi có DB
-
+        //Sẽ dùng để get thông tin sản phẩm khi có DB
         // $search = $this->request->getQuery('search');
 
         // $products = $this->Products->find('search', ['search' => $search])
-        //                            ->where(['Products.delete_flg' => 0]);
+        //                            ->where(['Products.delete_flg' => 0])
+        //                            ->all();
 
         // $this->set(compact('products'));
     }
@@ -190,8 +190,7 @@ class ProductsController extends AppController
     {
         $this->viewBuilder()->setLayout('product');
 
-        //Sẽ sử dụng để get thông tin sản phẩm động khi có DB
-
+        //Sẽ dùng để get thông tin sản phẩm khi có DB
         // $product = $this->Products->get($id, [
         //      'contain' => ['Categories', 'Brands', 'CartDetails', 'ImageProducts', 'OrderDetails', 'Properties'],
         // ]);
@@ -209,11 +208,11 @@ class ProductsController extends AppController
     public function category($id = null)
     {
         $this->viewBuilder()->setLayout('product');
-
-        //Sẽ sử dụng để get thông tin sản phẩm động khi có DB
         
+        //Sẽ dùng để get thông tin sản phẩm khi có DB
         // $products = $this->Products->find('all')
-        //                            ->where(['Products.category_id' => $id]);
+        //                            ->where(['Products.category_id' => $id])
+        //                            ->all();
 
         // $this->set(compact('products'));
     }
