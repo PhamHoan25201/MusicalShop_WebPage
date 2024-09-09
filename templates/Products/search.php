@@ -29,185 +29,22 @@
             <!-- Shop Product Start -->
             <div class="col-lg-12 col-md-8">
                 <div class="row pb-3">
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano1.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="./detail">Piano Kawai ND21</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>90,000,000 VNĐ</h5>
+                    <?php foreach ($products as $product): ?>
+                        <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
+                            <div class="product-item bg-light mb-4">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid w-100" src="<?= $product->image_products[0]['path_image'] ?>" alt="">
                                 </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
+                                <div class="text-center py-4">
+                                    <a class="h6 text-decoration-none text-truncate" href="./detail/<?= $product->id ?>"><?= $product->name ?></a>
+                                    <div class="d-flex align-items-center justify-content-center mt-2">
+                                        <h5><?= $product->price ?> VNĐ</h5>
+                                    </div>
+                                    <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Guitar4.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Tanglewood TWBB SDE</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>6,030,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano3.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Roland RP-102</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>18,490,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Violin3.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Violin Lazer LV-001</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>2,900,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Violin1.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Violin Suzuki 220FE</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>18,850,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Guitar3.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Suzuki SDG-6NL</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>2,500,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano4.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Yamaha U3D</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>30,000,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Violin4.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Violin Scherl & Roth</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>10,584,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Guitar1.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Cordoba C1M-CE</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>6,570,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Violin2.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Violin Selmer WL18E4CH</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>25,800,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Guitar2.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Kapok D-118AC</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>2,100,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano2.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Yamaha U1D</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>25,000,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <nav>
-                          <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                          </ul>
-                        </nav>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <!-- Shop Product End -->

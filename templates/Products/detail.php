@@ -6,7 +6,7 @@
 ?>
 <div class="products index content">
     <!-- Shop Start -->
-    <?php $this->assign('title', 'Piano Kawai ND21'); ?>
+    <?php $this->assign('title', $product->name); ?>
     <div class="container-body">
         <!-- Shop Detail Start -->
         <div class="container-fluid pb-5">
@@ -15,7 +15,7 @@
                     <div id="product-carousel">
                         <div class="carousel-inner bg-light">
                             <div class="carousel-item active">
-                                <img class="w-100 h-100" src="../img/Products/Piano1.jpg" alt="Image">
+                                <img class="w-100 h-100" src="<?= $product->image_products[0]['path_image'] ?>" alt="Image">
                             </div>
                         </div>
                     </div>
@@ -23,58 +23,18 @@
 
                 <div class="col-lg-7 h-auto mb-30">
                     <div class="h-100 bg-light p-30">
-                        <p class="mb-30">Với thiết kế đơn giản, hiện đại và cực kỳ sang trọng, ND-21 không chỉ mang dáng dấp của một cây đàn piano upright nguyên thủy, mà còn mang trong mình những giá trị tuyệt vời không thể so sánh được: âm thanh tuyệt hảo, độ cảm ứng lực tinh tế và kết cấu bộ cơ ổn định một cách tuyệt đối.</p>
+                        <p class="mb-30"><?= $product->description ?></p>
                         <div class="d-flex mb-30">
-                            <strong class="text-dark mr-3">Sizes:</strong>
                             <form>
+                                <?php foreach ($product->properties as $key=>$property): ?>
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="size-1" name="size">
-                                    <label class="custom-control-label" for="size-1">XS</label>
+                                    <input type="radio" class="custom-control-input" id="property-<?= $property->id ?>" name="property" value="<?= $property->id ?>">
+                                    <label class="custom-control-label" for="property-<?= $property->id ?>"><?= $property->name ?></label>
                                 </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="size-2" name="size">
-                                    <label class="custom-control-label" for="size-2">S</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="size-3" name="size">
-                                    <label class="custom-control-label" for="size-3">M</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="size-4" name="size">
-                                    <label class="custom-control-label" for="size-4">L</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="size-5" name="size">
-                                    <label class="custom-control-label" for="size-5">XL</label>
-                                </div>
+                                <?php endforeach; ?>
                             </form>
                         </div>
-                        <div class="d-flex mb-30">
-                            <strong class="text-dark mr-3">Colors:</strong>
-                            <form>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="color-1" name="color">
-                                    <label class="custom-control-label" for="color-1">Black</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="color-2" name="color">
-                                    <label class="custom-control-label" for="color-2">White</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="color-3" name="color">
-                                    <label class="custom-control-label" for="color-3">Red</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="color-4" name="color">
-                                    <label class="custom-control-label" for="color-4">Blue</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="color-5" name="color">
-                                    <label class="custom-control-label" for="color-5">Green</label>
-                                </div>
-                            </form>
-                        </div>
-                        <h3 class="font-weight-semi-bold mb-30">90,000,000 VNĐ</h3>
+                        <h3 class="font-weight-semi-bold mb-30"><?= $product->price ?> VNĐ</h3>
                         <div class="d-flex align-items-center mb-4 pt-2">
                             <div class="input-group quantity mr-3" style="width: 130px;">
                                 <div class="input-group-btn">
@@ -124,7 +84,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="review media mb-4">
-                                            <img src="../img/Products/User1.png" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                            <img src="/img/Products/User1.png" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                                             <div class="media-body">
                                                 <h6>YchiTQ<small> - <i>01/08/2024</i></small></h6>
                                                 <div class="text-primary mb-2">
@@ -138,7 +98,7 @@
                                             </div>
                                         </div>
                                         <div class="review media mb-4">
-                                            <img src="../img/Products/User2.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                            <img src="/img/Products/User2.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                                             <div class="media-body">
                                                 <h6>DongLT<small> - <i>03/08/2024</i></small></h6>
                                                 <div class="text-primary mb-2">

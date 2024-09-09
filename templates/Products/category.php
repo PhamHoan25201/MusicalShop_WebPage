@@ -23,135 +23,28 @@
 ?>
 <div class="products index content">
     <!-- Shop Start -->
-    <?php $this->assign('title', 'Piano'); ?>
+    <?php $this->assign('title', $category->name); ?>
     <div class="container-body">
         <div class="row px-xl-5">
             <!-- Shop Product Start -->
             <div class="col-lg-12 col-md-8">
                 <div class="row pb-3">
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano1.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="./detail">Piano Kawai ND21</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>90,000,000 VNĐ</h5>
+                    <?php foreach ($products as $product): ?>
+                        <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
+                            <div class="product-item bg-light mb-4">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid w-100" src="<?= $product->image_products[0]['path_image'] ?>" alt="">
                                 </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
+                                <div class="text-center py-4">
+                                    <a class="h6 text-decoration-none text-truncate" href="../detail/<?= $product->id ?>"><?= $product->name ?></a>
+                                    <div class="d-flex align-items-center justify-content-center mt-2">
+                                        <h5><?= $product->price ?> VNĐ</h5>
+                                    </div>
+                                    <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano2.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Yamaha U1D</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>25,000,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano3.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Roland RP-102</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>18,490,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano4.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Yamaha U3D</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>30,000,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano5.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Roland FP-E50</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>32,999,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano6.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Roland RP-302</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>25,110,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano7.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Kawai K300</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>180,600,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="../img/Products/Piano8.jpg" alt="">
-                            </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="">Piano Kohler & Campbell</a>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>65,000,000 VNĐ</h5>
-                                </div>
-                                <a href="javascript:" class="btn btn-primary" onclick="displayModal(this)">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <nav>
-                          <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                          </ul>
-                        </nav>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <!-- Shop Product End -->

@@ -152,12 +152,26 @@ class ProductsController extends AppController
     {
         $this->viewBuilder()->setLayout('product');
         
-        //Sẽ dùng để get thông tin sản phẩm khi có DB
-        // $products = $this->Products->find()
-        //                            ->where(['Products.delete_flg' => 0])
-        //                            ->all();
+        $products = $this->Products->find('all', ['contain' => ['Categories', 'Brands', 'ImageProducts', 'Properties']])
+                                   ->where(['Products.delete_flg' => 0])
+                                   ->all();
+    
+        $categories = $this->Products->Categories->find('list', ['limit' => 200])->all();
 
-        // $this->set(compact('products'));
+        
+        $productsCount = array();
+
+        foreach ($categories as $key => $item)
+        {
+            $productsCount[$key] = 0;
+        }
+    
+        foreach ($products as $key => $item)
+        {
+            $productsCount[$item['category_id']] =  $productsCount[$item['category_id']] + 1;
+        }
+
+        $this->set(compact('products', 'categories', 'productsCount'));
     }
 
     /**
@@ -169,14 +183,18 @@ class ProductsController extends AppController
     {
         $this->viewBuilder()->setLayout('product');
 
-        //Sẽ dùng để get thông tin sản phẩm khi có DB
+        //Sẽ update sau khi hoàn thiện chức năng search
         // $search = $this->request->getQuery('search');
 
         // $products = $this->Products->find('search', ['search' => $search])
         //                            ->where(['Products.delete_flg' => 0])
         //                            ->all();
 
-        // $this->set(compact('products'));
+        $products = $this->Products->find('all', ['contain' => ['Categories', 'Brands', 'ImageProducts', 'Properties']])
+                                   ->where(['Products.delete_flg' => 0])
+                                   ->all();
+
+        $this->set(compact('products'));
     }
 
     /**
@@ -190,12 +208,11 @@ class ProductsController extends AppController
     {
         $this->viewBuilder()->setLayout('product');
 
-        //Sẽ dùng để get thông tin sản phẩm khi có DB
-        // $product = $this->Products->get($id, [
-        //      'contain' => ['Categories', 'Brands', 'CartDetails', 'ImageProducts', 'OrderDetails', 'Properties'],
-        // ]);
+        $product = $this->Products->get($id, [
+             'contain' => ['Categories', 'Brands', 'ImageProducts', 'Properties'],
+        ]);
 
-        // $this->set(compact('product'));
+        $this->set(compact('product'));
     }
 
     /**
@@ -209,11 +226,11 @@ class ProductsController extends AppController
     {
         $this->viewBuilder()->setLayout('product');
         
-        //Sẽ dùng để get thông tin sản phẩm khi có DB
-        // $products = $this->Products->find('all')
-        //                            ->where(['Products.category_id' => $id])
-        //                            ->all();
+        $products = $this->Products->find('all', ['contain' => ['ImageProducts']])
+                                   ->where(['Products.category_id' => $id])
+                                   ->all();
+        $category = $this->Products->Categories->get($id);
 
-        // $this->set(compact('products'));
+        $this->set(compact('products', 'category'));
     }
 }
