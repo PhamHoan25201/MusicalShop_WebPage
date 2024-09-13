@@ -1,4 +1,21 @@
 <?php
+//----------------------------------------------------------------------------
+//
+//  Project name : Musical Shop (WebPage)
+//  Class Name   :
+//  Overview     : Template màn hình hiển thị hoàn thành cancel order
+//  Programmer   : ThanhND@SSV
+//  Created Date : 2024/09/13
+//  Version      : 0.1
+//
+//----------< History >--------------------------------------------------------
+//  ID           : 
+//  Programmer   :
+//  Updated Date :
+//  Comment      :
+//  Version      :  
+//-----------------------------------------------------------------------------
+
     $this->disableAutoLayout();
 ?>
 
