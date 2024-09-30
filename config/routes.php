@@ -89,6 +89,9 @@ return function (RouteBuilder $routes): void {
         // Login
         $builder->connect('/Login', ['controller' => 'UserPage', 'action' => 'login']);
 
+        // Logout
+        $builder->connect('/Logout', ['controller' => 'UserPage', 'action' => 'logout']);
+
         // Register
         $builder->connect('/Register', ['controller' => 'UserPage', 'action' => 'register']);
 
