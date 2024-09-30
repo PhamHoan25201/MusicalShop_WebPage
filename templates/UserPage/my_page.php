@@ -269,8 +269,10 @@
                                 </div><br>
 
                                 <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-outline-secondary-ct logout-button"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
-                                  </div>
+                                    <a href="Logout" class="btn btn-outline-secondary-ct logout-button">
+                                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

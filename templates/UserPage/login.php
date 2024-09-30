@@ -43,6 +43,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="webroot/css/Common/style.css" rel="stylesheet">
+
+    <!-- Cake CSS -->
+    <link href="webroot/css/cake.css" rel="stylesheet">
     <style>
         .profile {
           text-align: center;
@@ -110,6 +113,10 @@
 
         .toggle-password:hover {
             color: #000;
+        }
+        .customForm {
+            display: grid;
+            place-items: center;
         }
       </style>
 </head>
@@ -271,18 +278,25 @@
                         <div class="col-md-12 form-group">
                             <div class="checkout">
                                 <div class="profile">
-                                    <img src="https://via.placeholder.com/100" alt="Profile Image"width="150" height="150">
-                                    <h2>Phạm Văn Hoàn</h2>
+                                    <img src="https://ps.w.org/login-customizer/assets/icon-256x256.png?rev=2455454" alt="Profile Image"width="150" height="150">
                                 </div>
                             </div>                            
                         </div>
+                        <?= $this->Form->create(null, ['class' => 'col-md-12 form-group customForm']); ?>
+                        <div class="col-md-8 form-group">
+                            <?= $this->Flash->render() ?>
+                        </div>
                         <div class="col-md-8 form-group">
                             <label>Email</label>
-                            <input class="form-control" type="email" placeholder="Nhập Email" required>
+                            <input class="form-control" type="email" placeholder="Nhập Email" name="email" value="<?php if (isset($_SESSION['email'])) {
+																										echo h($_SESSION['email']);
+																									} ?>" required>
                         </div>
                         <div class="col-md-8 form-group">
                             <label>Mật khẩu</label>
-                            <input id="passwordPr" class="form-control" type="password" placeholder="Nhập mật khẩu" required>
+                            <input id="passwordPr" class="form-control" type="password" placeholder="Nhập mật khẩu" name="password"  value="<?php if (isset($_SESSION['password'])) {
+																										echo h($_SESSION['password']);
+																									} ?>">
                             <i class="toggle-password fas fa-eye" id="togglePasswordPr"></i>
                         </div>
                         <div class="col-md-8 form-group" style="text-align: end">
@@ -294,6 +308,7 @@
                         <div class="col-md-8 form-group" style="text-align: center">
                             <label>No Account?<a href="#" target="_blank" style="color: #007bff;"> Create one</a></label>
                         </div>
+                        <?php echo $this->Form->end(); ?>
                     </div>
                 </div>
             </div>

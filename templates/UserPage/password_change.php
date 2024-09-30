@@ -43,6 +43,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="webroot/css/Common/style.css" rel="stylesheet">
+
+    <!-- Cake CSS -->
+    <link href="webroot/css/cake.css" rel="stylesheet">
     <style>
         .profile {
           text-align: center;
@@ -110,6 +113,11 @@
 
         .toggle-password:hover {
             color: #000;
+        }
+
+        .customForm {
+            display: grid;
+            place-items: center;
         }
       </style>
 </head>
@@ -272,28 +280,39 @@
                             <div class="checkout">
                                 <div class="profile">
                                     <img src="https://via.placeholder.com/100" alt="Profile Image"width="150" height="150">
-                                    <h2>Phạm Văn Hoàn</h2>
+                                    <h2><?= $_SESSION['dataLogin']['full_name'] ?></h2>
                                 </div>
                             </div>                            
                         </div>
+                        <?= $this->Form->create(null, ['class' => 'col-md-12 form-group customForm']); ?>
+                        <div class="col-md-8 form-group">
+                            <?= $this->Flash->render() ?>
+                        </div>
                         <div class="col-md-8 form-group">
                             <label>Mật khẩu hiện tại<span class="text-danger required-indicator">*</span>:</label>
-                            <input id="passwordPr" class="form-control" type="password" placeholder="Nhập mật khẩu hiện tại của bạn" required>
+                            <input id="passwordPr" class="form-control" type="passwordOld" placeholder="Nhập mật khẩu hiện tại của bạn" name="passwordOld"  value="<?php if (isset($_SESSION['passwordOld'])) {
+																										echo h($_SESSION['passwordOld']);
+																									} ?>" required>
                             <i class="toggle-password fas fa-eye" id="togglePasswordPr"></i>
                         </div>
                         <div class="col-md-8 form-group">
                             <label>Nhập mật khẩu mới<span class="text-danger required-indicator">*</span>:</label>
-                            <input id="passwordNew" class="form-control" type="password" placeholder="Nhập mật khẩu mới của bạn" required>
+                            <input id="passwordNew" class="form-control" type="password" placeholder="Nhập mật khẩu mới của bạn" name="passwordNew"  value="<?php if (isset($_SESSION['passwordNew'])) {
+																										echo h($_SESSION['passwordNew']);
+																									} ?>" required>
                             <i class="toggle-password fas fa-eye" id="togglePasswordNew"></i>
                         </div>
                         <div class="col-md-8 form-group">
                             <label>Nhập lại mật khẩu<span class="text-danger required-indicator">*</span>:</label>
-                            <input id="passwordReNew" class="form-control" type="password" placeholder="Xác nhận lại mật khẩu" required>
+                            <input id="passwordReNew" class="form-control" type="password" placeholder="Xác nhận lại mật khẩu" name="passwordReNew"  value="<?php if (isset($_SESSION['passwordReNew'])) {
+																										echo h($_SESSION['passwordReNew']);
+																									} ?>" required>
                             <i class="toggle-password fas fa-eye" id="togglePasswordReNew"></i>
                         </div>
                         <div class="col-md-5 form-group">
                             <button class="btn btn-block btn-primary font-weight-bold py-3">Xác nhận</button>
                         </div>
+                        <?php echo $this->Form->end(); ?>
                     </div>
                 </div>
             </div>
