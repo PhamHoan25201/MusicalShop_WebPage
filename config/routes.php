@@ -55,7 +55,10 @@ return function (RouteBuilder $routes): void {
          * its action called 'display', and we pass a param to select the view file
          * to use (in this case, templates/Pages/home.php)...
          */
-        $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        // YChiTQ UPD
+        $builder->connect('/', ['controller' => 'Home', 'action' => 'index']);
+
+        $builder->connect('/home', ['controller' => 'Home', 'action' => 'index']);
 
         $builder->connect('/Users', ['controller' => 'Users', 'action' => 'index']);
         $builder->connect('/Roles', ['controller' => 'Roles', 'action' => 'index']);
@@ -88,9 +91,6 @@ return function (RouteBuilder $routes): void {
 
         // Login
         $builder->connect('/Login', ['controller' => 'UserPage', 'action' => 'login']);
-
-        // Logout
-        $builder->connect('/Logout', ['controller' => 'UserPage', 'action' => 'logout']);
 
         // Register
         $builder->connect('/Register', ['controller' => 'UserPage', 'action' => 'register']);
